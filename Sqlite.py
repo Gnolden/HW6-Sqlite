@@ -12,7 +12,9 @@ for _ in range(10):
     name = f"Book {_ + 1}"
     pages = random.randint(100, 500)
     cover_type = random.choice(['Hardcover', 'Paperback', 'Leathercover', 'E-book'])
-    category = random.choice(['Fiction', 'Non-fiction', 'Science Fiction', 'Fantasy', 'Mystery', 'Thriller', 'History', 'Romance', 'Adventure', 'Humor'])
+    category = random.choice(
+        ['Fiction', 'Non-fiction', 'Science Fiction', 'Fantasy', 'Mystery', 'Thriller', 'History', 'Romance',
+         'Adventure', 'Humor'])
     books.append((name, pages, cover_type, category))
 
 c.executemany('INSERT INTO Book VALUES (?,?,?,?)', books)
